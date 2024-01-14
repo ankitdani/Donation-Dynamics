@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation Inventory</title>
+</head>
+<body>
+
+<h1>
+    Add donor details here:
+</h1>
+
+<br>
+<hr>
+
+<form th:action="@{/donation_inventory_form}" th:object="${donation_inventory_form}" method="post">
+    <p>
+        Donor Name: <input type="text" name ="donor_name" />
+    </p>
+    <p>
+        Type of Donation: <input type="text" name ="donation_type" />
+    </p>
+    <p>
+        Amount donated $: <input type="number" name ="donation_amount" />
+    </p>
+    <p>
+        Date of Donation: <input type="date" name ="donation_date" />
+    </p>
+    <p>
+        <input type="submit" value="Submit" name ="Submit" />
+    </p>
+</form>
+
+</body>
+</html>
