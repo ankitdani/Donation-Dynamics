@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Total Donations by Donor</title>
+</head>
+<body>
+<h2>Total Donations by Donor</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Donor Name</th>
+    <th>Total Donation Amount</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="result : ${otal_donations_by_donor}">
+    <td th:text="${result[0]}"></td>
+    <td th:text="${result[1]}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

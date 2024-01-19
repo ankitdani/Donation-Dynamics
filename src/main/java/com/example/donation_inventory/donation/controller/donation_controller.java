@@ -1,5 +1,6 @@
     package com.example.donation_inventory.donation.controller;
 
+    import com.example.donation_inventory.donation.distribution_inventory_form;
     import com.example.donation_inventory.donation.donation_inventory_form;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Controller;
@@ -42,6 +43,28 @@
 
             return "donation_inventory_form_summary";
         }
+
+        @GetMapping(path = "/distribution_inventory")
+        public String get_distribution_inventory_form(){
+            return "distribution_inventory";
+        }
+
+        @PostMapping(path = "/distribution_inventory_form")
+        public String submit_donation_inventory_form(distribution_inventory_form distribution_inventory_form){
+
+            donor distributor = null;
+
+            if (distribution_inventory_form != null){
+                distributor = new donor(distribution_inventory_form.getDonor_name(),
+                        distribution_inventory_form.getDistribution_type(),
+                        distribution_inventory_form.getDistributed_amount(),
+                        distribution_inventory_form.getDistribution_date());
+            }
+            donor_repository.save(distributor);
+
+            return "distribution_inventory_form_summary";
+        }
+
 
 
     }

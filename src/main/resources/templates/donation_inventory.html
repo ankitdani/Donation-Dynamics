@@ -15,22 +15,36 @@
 
 <form th:action="@{/donation_inventory_form}" th:object="${donation_inventory_form}" method="post">
     <p>
-        Donor Name: <input type="text" name ="donor_name" />
+        Donor Name: <input type="text" name="donor_name" />
     </p>
     <p>
-        Type of Donation: <input type="text" name ="donation_type" />
-
+        Type of Donation: <input type="text" name="donation_type" />
     </p>
     <p>
-        Quantity/Amount donated $: <input type="number" name ="donation_amount" />
+        Quantity/Amount donated $: <input type="number" name="donation_amount" />
     </p>
     <p>
-        Date of Donation: <input type="date" name ="donation_date" />
+        Date of Donation: <input type="date" name="donation_date" />
     </p>
     <p>
-        <input type="submit" value="Submit" name ="Submit" />
+        <input type="submit" value="Submit" name="Submit" />
+    </p>
+    <p th:if="${param.Submit}">
+        Form submitted successfully!
     </p>
 </form>
 
+<!-- Display message if the form has been submitted -->
+
+<form th:action="@{/inventory_report}" method="get">
+    <p>
+        <button type="submit">inventory_report</button>
+    </p>
+</form>
+<!--<form th:action="@{/total_donations_by_donor}" method="get">-->
+<!--    <p>-->
+<!--        <button type="submit">View Total Donations by Donor</button>-->
+<!--    </p>-->
+<!--</form>-->
 </body>
 </html>

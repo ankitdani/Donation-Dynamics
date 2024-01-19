@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Distributed Inventory Report</title>
+</head>
+<body>
+<h2>Distributed Inventory Report</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Donor Name</th>
+    <th>Distribution Type</th>
+    <th>Distributed Amount</th>
+    <th>Distribution Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="distributor : ${donor_list}">
+    <td th:text="${distributor.donor_name}"></td>
+    <td th:text="${distributor.distribution_type}"></td>
+    <td th:text="${distributor.distributed_amount}"></td>
+    <td th:text="${distributor.distribution_date}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
